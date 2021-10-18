@@ -1,0 +1,58 @@
+@import "colors";
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@300&display=swap');
+
+
+
+body{
+    background-color: #F2f2f2;
+}
+h1{
+    text-align: center;
+    color: $Natureza-2-hex;
+}
+
+
+#popsicle{
+  #drop{
+    &-left{
+      animation: drop-left 5s ease-in-out infinite
+    }
+    &-right{
+      animation: drop-right 5s ease-in-out infinite
+    }
+  }
+}
+
+@keyframes drop-left{
+  from{
+    transform: translate(15px, -10px);
+    opacity: 1
+  }
+  to{
+    transform: translate(-30px, -50px);
+    opacity: 0
+  }  
+}
+@keyframes drop-right{
+  from{
+    transform: translate(10px, 5px);
+    opacity: 1
+  }
+  to{
+    transform: translate(500px, 10px);
+    opacity: 1
+  }
+}
+
+@keyframes cycle {
+  33% { visibility: visible; }
+  100%  { visibility: hidden;  }
+}
+.lit {
+  animation: cycle 9s step-start infinite;
+}
+.red    .lit { animation-delay: -3s; }
+.yellow .lit { animation-delay: -6s; }
+.green  .lit { animation-delay:  0s; }
+
