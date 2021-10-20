@@ -24,6 +24,7 @@ h1{
   }
 }
 
+/* Animação  fumaça */
 @keyframes drop-left{
   from{
     transform: translate(15px, -10px);
@@ -34,6 +35,9 @@ h1{
     opacity: 0
   }  
 }
+
+/* Animação onibus */
+
 @keyframes drop-right{
   from{
     transform: translate(10px, 5px);
@@ -45,6 +49,7 @@ h1{
   }
 }
 
+/* Animação do semaforo */
 @keyframes cycle {
   33% { visibility: visible; }
   100%  { visibility: hidden;  }
