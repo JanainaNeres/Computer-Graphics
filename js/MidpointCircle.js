@@ -5,7 +5,7 @@ var width = canvas.width;
 var height = canvas.height;
 
 
-
+//Função mais importante do código : pausa 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
@@ -26,7 +26,6 @@ var drawBorder = function () {
     ctx.fillRect(width - 10, 0, 10, height);
 };
 
-
 var drawMalha = function () {
     var x = 10;
 	for(var i = 0; i < width ; i += 1) {
@@ -43,9 +42,7 @@ var drawMalha = function () {
 	};
 };
 
-
-
-// Draw the score in the top-left corner
+// Iteração 
 var Write = function (time) {
     ctx.font = "20px Courier";
     ctx.textAlign = "left";
@@ -57,8 +54,6 @@ var Write = function (time) {
 };
    
 
-
-
 async function rasterCircle(r){
     cx = 250;
     cy = 250;
@@ -68,19 +63,13 @@ async function rasterCircle(r){
     var y = -r;
     
     rect(cx, cy , "Black")
-
     rect(cx, cy + r, "Black");
     rect(cx, cy - r, "Black");
     rect(cx + r, cy, "Black");
     rect(cx - r, cy, "Black");
-   
-
- 
-    
 
     while (x  < -(y + 10)  ) {
 
-        
         if (hm < 0){
             hm = hm + 2*x + 3;
         } else {
@@ -109,12 +98,14 @@ async function rasterCircle(r){
     clearInterval(intervalId);
 };
    
+drawBorder();
+drawMalha();
+
 var time = 0;
 var x = 0;
 
 
 var intervalId = setInterval(function () {
-
     ctx.clearRect(0, 0, width, height);
     drawBorder();
     drawMalha();
@@ -124,8 +115,5 @@ var intervalId = setInterval(function () {
     Write(time + 1);
     x = x + 10;
     time = time+1;
-    
-    
-
-}, 2000);
+    }, 2000);
 

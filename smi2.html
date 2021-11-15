@@ -1,16 +1,12 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width">
+    <title>SMI </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" >
-    <link href="css/bus.css" rel="stylesheet" >
     
-
-    <title>Ônibus</title>
   </head>
   <body>
 
@@ -57,6 +53,9 @@
       </symbol>
   </svg>
 
+
+
+
   <header>
     <div class="  bg-header text-white"> 
       <div class="container">
@@ -99,139 +98,17 @@
 
   </header>
 
-    <div>
-
-      <!--SVGs do trabalho-->
-      <svg id="popsicle" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1350px" height="600px">
-        
-        <!--Fundo-->
-        <rect x="10" y="30" width="1330" height="520" style="stroke:#FFFCE6; fill:#0477BF;" />
-        <!--Avenida-->
-        <rect x="10" y="300" width="1330" height="250"  fill="#595959" />
-        <!--Meio-Fio-->
-        <rect x="10" y="280" height="20" width="1330" rx= "0" fill="#D9D9D9" />
-
-        <!--Semaforo-->
-        <defs>
-          <circle id="light" cx="1105" r="10" />
-          <radialGradient id="red-light-on" fx="0.45" fy="0.4">
-          <stop stop-color="orange" offset="0.1"/>
-          <stop stop-color="red" offset="0.8"/>
-          <stop stop-color="brown" offset="1.0"/>
-          </radialGradient>
-          <radialGradient id="red-light-off" fx="0.5" fy="0.4">
-              <stop stop-color="maroon" offset="0"/>
-              <stop stop-color="#220000" offset="0.7"/>
-              <stop stop-color="black" offset="1.0"/>
-          </radialGradient>
-          <radialGradient id="yellow-light-on" fx="0.5" fy="0.4">
-              <stop stop-color="yellow" offset="0.1"/>
-              <stop stop-color="orange" offset="0.6"/>
-              <stop stop-color="darkOrange" offset="1.0"/>
-          </radialGradient>
-          <radialGradient id="yellow-light-off" fx="0.5" fy="0.4">
-              <stop stop-color="#A06000" offset="0"/>
-              <stop stop-color="#804000" offset="0.7"/>
-              <stop stop-color="#502000" offset="1"/>
-          </radialGradient>
-          <radialGradient id="green-light-on" fx="0.5" fy="0.4">
-              <stop stop-color="#88FF00" offset="0.1"/>
-              <stop stop-color="forestGreen" offset="0.7"/>
-              <stop stop-color="darkGreen" offset="1.0"/>
-          </radialGradient>
-          <radialGradient id="green-light-off" fx="0.5" fy="0.4">
-              <stop stop-color="#007000" offset="0"/>
-              <stop stop-color="#004000" offset="0.6"/>
-              <stop stop-color="#001000" offset="1.0"/>
-          </radialGradient>
-        </defs>
-        <!--Poste do Semaforo-->
-        <rect x="1100" y="190" height="100" width="10" rx= "5" fill="#A6A6A6" />
-        <rect x="1090" y="130" height="110" width="30" rx= "5" fill="#262626" />
-
-        <g stroke="black" stroke-width="2">
-            <g class="red light">
-                <use xlink:href="#light" y="150" fill="url(#red-light-off)" />
-                <use class="lit" 
-                    xlink:href="#light" y="150" fill="url(#red-light-on)" />
-            </g>
-            <g class="yellow light">
-                <use xlink:href="#light"  y="185" fill="url(#yellow-light-off)" />
-                <use class="lit" 
-                    xlink:href="#light"   y="185" fill="url(#yellow-light-on)" 
-                    visibility="hidden" />
-            </g>
-            <g class="green light">
-                <use xlink:href="#light"  y="215" fill="url(#green-light-off)" />
-                <use class="lit"
-                    xlink:href="#light"  y="215" fill="url(#green-light-on)" 
-                    visibility="hidden" />
 
 
-            </g>
-        </g>
+  
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    
+  
 
 
-        
-        <!--Faixa de Pedestre-->
-        <rect x="1100" y="255" height="30" width="130" rx= "0" fill="white" transform=" translate(0 5) rotate(3)" />
-        <rect x="1100" y="255" height="30" width="130" rx= "0" fill="white" transform="translate(-1 60) rotate(3)" />
-        <rect x="1100" y="255" height="30" width="130" rx= "0" fill="white" transform="translate(-2 120) rotate(3)" />
-        <rect x="1100" y="255" height="30" width="130" rx= "0" fill="white" transform="translate(-3 180) rotate(3)" />
-        
-        <!--Faixa central-->
-        <rect x="10" y="410" height="20" width="1000" rx= "0" fill="#FAD41B" />
 
-        <g id="drop-right" stroke-width="4" transform="translate(113 330)">
-          <!--Janela Topo-->
-          <rect x="100" y="160" height="20" width="90" rx= "10" fill="#F2CC39" />
-          <!--Corpo do onibus-->
-          <rect x="50" y="170" height="200" width="500" rx= "20" fill="#F2E530" />
-          <!--Escapamento-->
-          <rect x="60" y="160" height="30" width="10" rx= "5" fill="gray" />
-          <rect x="50" y="160" height="15" width="15" rx= "5" fill="gray" />
 
-          <!--Fumaça-->
-          <g id="drop-left" stroke-width="4" transform="translate(2 100)">
-            <ellipse transform="translate(10 155)" rx='24' ry="17" style='stroke:none; fill:#54565B'/> 
-            <path d="M 0 140 Q 10 110 30 150" stroke="black" fill="#54565B" stroke-width="1"/>
-            <path d="M 30 150 Q 50 120 35 160" stroke="black" fill="#54565B" stroke-width="1"/>
-            <path d="M 35 160 Q 30 190 20 165" stroke="black" fill="#54565B" stroke-width="1"/>
-            <path d="M 20 170 Q -50 190 -10 150" stroke="black" fill="#54565B" stroke-width="1"/>
-            <path d="M 0 140 Q -50 120 -10 160" stroke="black" fill="#54565B" stroke-width="1"/>
-
-          </g>
-
-          <!--Luz de freio-->
-          <rect x="50" y="190" height="50" width="10" rx= "10" fill="#F20530" />
-          <!--Farol-->
-          <rect x="539" y="295" height="40" width="15" rx= "20" fill ="white"  />
-
-          <!--Janelas-->
-          <rect x="70" y="200" height="80" width="90" rx= "20" fill="#393647" />
-          <rect x="165" y="200" height="80" width="80" rx= "20" fill="#393647" />
-          <rect x="250" y="200" height="80" width="80" rx= "20" fill="#393647" />
-          <rect x="445" y="200" height="80" width="100" rx= "5" fill="#393647" />
-          <!--Retrovisor-->
-          <rect x="520" y="210" height="40" width="15" rx= "10" fill="gray" />
-          <!--Porta-->
-          <rect x="340" y="200" height="140" width="90" rx= "20" fill="#A3CDD9" />
-          <rect x="340" y="200" height="140" width="7" rx= "5" fill="black" />
-          <rect x="423" y="200" height="140" width="7" rx= "5" fill="black" />
-          <rect x="380" y="200" height="140" width="5" rx= "5" fill="black" />
-          <rect x="387" y="200" height="140" width="5" rx= "5" fill="black" />
-          <rect x="340" y="200" height="10" width="90" rx= "5" fill="black" />
-          <rect x="340" y="335" height="20" width="90" rx= "5" fill="black" />
-          
-          <!--Pneus-->
-          <circle  id="track" cx="150" cy="350" r="50" fill="black" />
-          <circle  id="section" cx="150" cy="350" r="30" fill="gray" />
-          <circle  id="track" cx="485" cy="350" r="50" fill="black" />
-          <circle  id="section" cx="485" cy="350" r="30" fill="gray" />
-        </g>
-      
-      </svg>
-    </div>
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div class="col-md-4 d-flex align-items-center">
@@ -241,18 +118,19 @@
         <span class="text-muted">&copy; 2021 by JanainaNeres</span>
       </div>
   
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <ul class="nav col-md-4justify-content-end list-unstyled d-flex">
         <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
         <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
         <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
       </ul>
-    </footer>
+    </footer>  
 
-
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="js/script.js"> </script>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="js/smi2.js"></script>
+
+
+
   </body>
 
 </html>

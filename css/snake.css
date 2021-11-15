@@ -1,0 +1,43 @@
+body{
+    background: black;
+}
+
+header{
+    text-align: center;
+    color: cornsilk;
+}
+  
+canvas{
+    left :37%;
+    position: absolute;
+}
+
+button {
+    justify-self: center;
+    width: 30%;
+    height: 5%;
+    border-radius: 10px;
+    background-color: #ccc;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-inline-start: 5%;
+    margin-block-start: 5%;
+    text-size-adjust: 50%;
+    border: 1px solid;
+    box-shadow: 3px 5px black;
+    left: 31%;
+    top: 65%;
+    position: absolute;
+}
+  
+button:hover {
+    background-color: #b0b0b0;
+    cursor: pointer;
+}
+
+footer{
+	color:rgba(255, 255, 255, 0.295);   
+    text-align-last: center; 
+    margin-top: 40% ;
+    
+}
